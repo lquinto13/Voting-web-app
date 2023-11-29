@@ -10,17 +10,33 @@
     <div class="container">
         <h1>Vote for your favorite language</h1>
         <div class="cardContainer">
-            <div class ="card first">
-                <h2 class="cardTitle">Java</h2>
-                <span id="java">%</span>
+            <div class ="card">
+                <input type="radio" id="first" value= "java" name="poll" checked>
+                <label for="first">
+                    <div><img src="java.svg" alt="java"></div>
+                    <span id="javaTally"></span>
+                </label>
             </div>
-            <div class ="card second">
-                <h2 class="cardTitle">Python</h2>
-                <span id="python">%</span>
+            <div class ="card">
+                <input type="radio" id="second" value= "js" name="poll">
+                <label for="second">
+                    <div><img src="JS.svg" alt="JS"></div>
+                    <span id="jsTally"></span>
+                </label>
             </div>
-            <div class ="card third">
-                <h2 class="cardTitle">JavaScript</h2>
-                <span id="JavaScript">%</span>
+            <div class ="card">
+                <input type="radio" id="third" value= "python" name="poll">
+                <label for="third">
+                    <div><img src="python.svg" alt="python"></div>
+                    <span id="pyTally"></span>
+                </label>
+            </div>
+            <div class ="card">
+                <input type="radio" id="fourth" value= "csharp" name="poll">
+                <label for="fourth">
+                    <div><img src="csharp.svg" alt="csharp"></div>
+                    <span id="cTally"></span>
+                </label>
             </div>
         </div>
         <button onclick="submitVote()"> <strong>Submit Vote</strong></button>
