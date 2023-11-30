@@ -31,8 +31,6 @@ function submitVote(){
     pyTally.textContent =  toPercent(options[2].votes/tallyTotal)
     cTally.textContent =  toPercent(options[3].votes/tallyTotal)
 
-
-
 }
 
 function toPercent(vote){
