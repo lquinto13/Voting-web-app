@@ -1,5 +1,4 @@
 let tallyTotal = 0; 
-let java, python, js, csharp
 
 const options = [
     {id:"java", text:"Java", votes:0},
@@ -10,31 +9,45 @@ const options = [
 ]
 function submitVote(){
     const selectedOption = document.querySelector('input[name="poll"]:checked')
-    tallyTotal+=1
-    if(selectedOption.value === options[0].id){
-        options[0].votes+=1 
-    }else if(selectedOption.value === options[1].id){
-        options[1].votes+=1
-    }else if(selectedOption.value === options[2].id){
-        options[2].votes+=1
-    }else if(selectedOption.value === options[3].id){
-        options[3].votes+=1
+    const selectedOptionObj = options.find((x)=> x.id === selectedOption.value)
+    if(selectedOptionObj){
+        selectedOptionObj.votes++
+        alert("You have succesfully voted for " + selectedOptionObj.text)
+        displayTally()
+        displayBarPercent()
+    }
+}
+
+function displayTally(){
+    const tally =document.getElementsByClassName('tally')
+
+    for(let i = 0; i < 4; i++){
+       if(options[i].id === tally[i].id){
+            tally[i].textContent = options[i].votes
+       }
     }
     
-    const javaTally = document.getElementById('javaTally');
-    const pyTally = document.getElementById('pyTally');
-    const jsTally = document.getElementById('jsTally');
-    const cTally = document.getElementById('cTally');
-
-    javaTally.textContent =  toPercent(options[0].votes/tallyTotal)
-    jsTally.textContent =  toPercent(options[1].votes/tallyTotal)
-    pyTally.textContent =  toPercent(options[2].votes/tallyTotal)
-    cTally.textContent =  toPercent(options[3].votes/tallyTotal)
-
 }
 
-function toPercent(vote){
-    let votePercent = (vote * 100).toFixed(2); 
-    return votePercent +"%"
+function getTotalVotes(){
+    return options.reduce((total, option)=> total +option.votes, 0)
 }
 
+function displayBarPercent(){
+    const bars =document.getElementsByClassName('barBG')
+    const percent = document.getElementsByClassName('percent')
+    for(let i = 0; i < 4; i++){
+        if(options[i].id === bars[i].id){
+            const percentage = ((options[i].votes/ getTotalVotes() * 100)).toFixed(0) + "%"
+            bars[i].style.width = percentage
+        }
+
+        if(options[i].id === percent[i].id){
+            const percentage = ((options[i].votes/ getTotalVotes() * 100)).toFixed(0) + "%"
+            percent[i].textContent = percentage
+        }
+     }
+
+   
+
+}

@@ -10,46 +10,78 @@
     <div class="container">
         <h1>Vote for your favorite language</h1>
         <div class="cardContainer">
-            <div class ="card">
-                <input type="radio" id="first" value= "java" name="poll" checked>
-                <label for="first" >
-                    <div class="front"><img src="java.svg" alt="java"></div>
-                    <div  class="back">
-                        <span id="javaTally">0.00%</span>
-                    </div>
-                </label>
-                
+            <div class ="contentContainer">
+                <div class ="card">
+                    <input type="radio" id="first" value= "java" name="poll" checked>
+                    <label for="first" >
+                        <div class="front"><img src="java.svg" alt="java"></div>
+                        <div  class="back">
+                            <span class="tally" id="java">0</span>
+                        </div>
+                    </label>    
+                </div>
+
+                <div class="bar" id="bar">
+                    <div class="barBG" id="java" style="width:0; background-color: #68d8d1; height: 100%; border-radius:5px" ></div>
+                </div>
+                <div>
+                    <span class="percent" id="java">0%</span>
+                </div>
             </div>
-            <div class ="card">
-                <input type="radio" id="second" value= "js" name="poll">
-                <label for="second">
-                    <div class="front"><img src="JS.svg" alt="java"></div>
-                    <div  class="back">
-                        <span id="jsTally">0.00%</span>
-                    </div>
-                </label>
-             
+            <div class ="contentContainer">
+                <div class ="card">
+                    <input type="radio" id="second" value= "js" name="poll">
+                    <label for="second">
+                        <div class="front"><img src="JS.svg" alt="java"></div>
+                        <div  class="back">
+                            <span class="tally" id="js">0</span>
+                        </div>
+                    </label> 
+                </div>
+                <div class="bar" >
+                    <div class="barBG" id="js" style="width:0; background-color: #68d8d1; height: 100%; border-radius:5px" ></div>
+                </div>
+                <div>
+                    <span class="percent" id="js">0%</span>
+                </div>
             </div>
-            <div class ="card">
-                <input type="radio" id="third" value= "python" name="poll">
-                <label for="third">
-                    <div class="front"><img src="python.svg" alt="java"></div>
-                    <div  class="back">
-                        <span id="pyTally">0.00%</span>
-                    </div>
-                </label>
+            <div class ="contentContainer">
+                <div class ="card">
+                    <input type="radio" id="third" value= "python" name="poll">
+                    <label for="third">
+                        <div class="front"><img src="python.svg" alt="java"></div>
+                        <div  class="back">
+                            <span class="tally" id="python">0</span>
+                        </div>
+                    </label>
+                </div>
+                <div class="bar" id="bar">
+                    <div class="barBG" id="python" style="width:0; background-color: #68d8d1; height: 100%; border-radius:5px" ></div>
+                </div>
+                <div>
+                    <span class="percent" id="python">0%</span>
+                </div>
             </div>
-            <div class ="card">
-                <input type="radio" id="fourth" value= "csharp" name="poll">
-                <label for="fourth">
-                    <div class="front">
-                        <img src="csharp.svg" alt="java">
-                    </div>
-                    <div  class="back">
-                        <span id="cTally">0.00%</span>
-                    </div>
-                </label>
+            <div class ="contentContainer">
+                <div class ="card">
+                    <input type="radio" id="fourth" value= "csharp" name="poll">
+                    <label for="fourth">
+                        <div class="front">
+                            <img src="csharp.svg" alt="csharp">
+                        </div>
+                        <div  class="back">
+                            <span class="tally" id="csharp">0</span>
+                        </div>
+                    </label>
+                </div>
+                <div class="bar" id="bar">
+                    <div class="barBG" id="csharp" style="width:0; background-color: #68d8d1; height: 100%; border-radius:5px" ></div>
+                </div>
+                <div>
+                    <span class="percent" id="csharp">0%</span>
+                </div>
             </div>
+          
         </div>
         <button onclick="submitVote()"> <strong>Submit Vote</strong></button>
 
