@@ -1,5 +1,3 @@
-let tallyTotal = 0; 
-
 const options = [
     {id:"java", text:"Java", votes:0},
     {id:"js", text:"JavaScript", votes:0},
@@ -20,7 +18,6 @@ function submitVote(){
 
 function displayTally(){
     const tally =document.getElementsByClassName('tally')
-
     for(let i = 0; i < 4; i++){
        if(options[i].id === tally[i].id){
             tally[i].textContent = options[i].votes
@@ -41,13 +38,9 @@ function displayBarPercent(){
             const percentage = ((options[i].votes/ getTotalVotes() * 100)).toFixed(0) + "%"
             bars[i].style.width = percentage
         }
-
         if(options[i].id === percent[i].id){
             const percentage = ((options[i].votes/ getTotalVotes() * 100)).toFixed(0) + "%"
             percent[i].textContent = percentage
         }
      }
-
-   
-
 }

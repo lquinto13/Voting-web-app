@@ -15,13 +15,12 @@ body{
     margin: 0;
     padding: 0;   
     font-family: sans-serif;
-    
-
 }
 
 h1{
     position: relative;
-    left: 10%;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +32,7 @@ h1{
 
 .container{
     background-color: white;
-    padding: 1.5rem 5.5rem; 
+    padding: 20px 30px; 
     border-radius: 1rem ;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     display: flex;
@@ -51,9 +50,11 @@ h1{
 
 .contentContainer{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    gap: 3rem;
+    gap: 15px;
+    min-width: 800px;
+    flex-basis: auto;
 }
 
 .card{
@@ -106,7 +107,9 @@ button{
     cursor: pointer;
     border-radius: 5px;
     position: relative;
-    left: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
     
 }
 
@@ -145,6 +148,15 @@ img{
 }
 
 .percent{
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
     font-size: 1.5rem;
+    
+}
+
+.barBG{
+    transition: width 0.5s ease;
+
 }
